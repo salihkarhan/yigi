@@ -1,0 +1,297 @@
+<html lang="ug" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مۇبارەك رامىزان تەبرىكى ۋە ئەسلەتمە</title>
+    <!-- ئۇيغۇرچە خەت نۇسخىسى ئۈچۈن گۇگۇل فونتى -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+code
+Code
+<style>
+    :root {
+        --primary-color: #0e3a2f;
+        --accent-gold: #e5b958;
+        --light-gold: #fdf6e2;
+        --text-dark: #2c3e50;
+        --text-light: #ffffff;
+        --card-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Noto Naskh Arabic', 'Amiri', Tahoma, sans-serif;
+        background: linear-gradient(135deg, #061e18, #0e3a2f, #134e3f);
+        color: var(--text-dark);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        line-height: 1.8;
+    }
+
+    .container {
+        max-width: 700px;
+        width: 100%;
+        background: var(--card-bg);
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(229, 185, 88, 0.2);
+        overflow: hidden;
+        border: 2px solid var(--accent-gold);
+        position: relative;
+    }
+
+    /* چىراغ ۋە ئاي شەكىللىك بېزەك */
+    .header {
+        background: linear-gradient(to bottom, #092820, #0e3a2f);
+        color: var(--text-light);
+        text-align: center;
+        padding: 40px 20px;
+        position: relative;
+        border-bottom: 3px solid var(--accent-gold);
+    }
+
+    .header .moon {
+        font-size: 55px;
+        color: var(--accent-gold);
+        margin-bottom: 10px;
+        display: inline-block;
+        filter: drop-shadow(0 0 10px rgba(229, 185, 88, 0.6));
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+        color: var(--accent-gold);
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .header p {
+        font-size: 1.1rem;
+        color: #d1e7dd;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .content {
+        padding: 30px 25px;
+    }
+
+    .greeting-card {
+        background-color: var(--light-gold);
+        border-right: 5px solid var(--accent-gold);
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        font-size: 1.05rem;
+        text-align: justify;
+    }
+
+    .section-title {
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        position: relative;
+        font-weight: bold;
+    }
+
+    .section-title::after {
+        content: '❖';
+        display: block;
+        color: var(--accent-gold);
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    .reminders {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .reminder-item {
+        display: flex;
+        align-items: flex-start;
+        background: #ffffff;
+        border: 1px solid #e1e8ed;
+        padding: 15px;
+        border-radius: 12px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .reminder-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        border-color: var(--accent-gold);
+    }
+
+    .reminder-icon {
+        background-color: var(--primary-color);
+        color: var(--accent-gold);
+        min-width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-left: 15px;
+        flex-shrink: 0;
+    }
+
+    .reminder-text h3 {
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+    }
+
+    .reminder-text p {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .hadith-quote {
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px;
+        background: #f4fbf7;
+        border-radius: 10px;
+        border: 1px dashed #207355;
+        font-style: italic;
+    }
+
+    .hadith-quote p {
+        color: #0e3a2f;
+        font-size: 1rem;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background: #f8f9fa;
+        border-top: 1px solid #eee;
+        font-size: 0.9rem;
+        color: #777;
+    }
+
+    .btn-share {
+        display: inline-block;
+        background: var(--accent-gold);
+        color: #0e3a2f;
+        padding: 10px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .btn-share:hover {
+        background: #d4a342;
+    }
+
+    @media (max-width: 600px) {
+        .header h1 {
+            font-size: 1.7rem;
+        }
+        .content {
+            padding: 20px 15px;
+        }
+    }
+</style>
+</head>
+<body>
+code
+Code
+<div class="container">
+    <!-- باش قىسمى: تەبرىكلەش -->
+    <header class="header">
+        <div class="moon">🌙</div>
+        <h1>مۇبارەك رامىزان ئېيىڭىزغا بەرىكەت يار بولسۇن!</h1>
+        <p>بارلىق گۇناھلار مەغپىرەت قىلىنىدىغان، دۇئالار ئىجابەت بولىدىغان مۇبارەك ئايغا يەتكۈزگەن ئاللاھقا ھەمدۇسانا بولسۇن.</p>
+    </header>
+
+    <!-- ئاساسىي مەزمۇن -->
+    <div class="content">
+        <!-- قىزغىن تەبرىك -->
+        <div class="greeting-card">
+            ھۆرمەتلىك قېرىندىشىم، سىزنى ۋە پۈتكۈل ئائىلىڭىزدىكىلەرنى مۇبارەك رەھمەت ۋە مەغپىرەت ئېيى بولغان «رامىزان» بىلەن چىن قەلبىمدىن تەبرىكلەيمەن. تۇتقان روزىڭىزنى، قىلغان دۇئا-ئىبادەتلىرىڭىزنى ئاللاھ ئۆز دەرگاھىدا قوبۇل قىلسۇن!
+        </div>
+
+        <!-- ئەسلەتمىلەر تىزىملىكى -->
+        <h2 class="section-title">رامزانلىق گۈزەل ئەسلەتمىلەر</h2>
+
+        <div class="reminders">
+            <!-- 1-ئەسلەتمە -->
+            <div class="reminder-item">
+                <div class="reminder-icon">📖</div>
+                <div class="reminder-text">
+                    <h3>قۇرئان كەرىمنى كۆپرەك ئوقۇش</h3>
+                    <p>بۇ ئاي قۇرئان ئېيىدۇر. كۈندىلىك ۋاقتىڭىزدىن مەخسۇس ئايرىپ، ئاز بولسىمۇ تەپەككۇر ۋە مەنىسى بىلەن قۇرئان تىلاۋەت قىلىشنى ئۇنتۇماڭ.</p>
+                </div>
+            </div>
+
+            <!-- 2-ئەسلەتمە -->
+            <div class="reminder-item">
+                <div class="reminder-icon">🤲</div>
+                <div class="reminder-text">
+                    <h3>دۇئانى كۆپەيتىش (ئىپتار ۋاقتى)</h3>
+                    <p>روزىدارنىڭ ئىپتار ئالدىدا قىلغان دۇئاسى قايتۇرۇلمايدۇ. ئۆزىڭىز، ئائىلىڭىز، ئەل-يۇرتىڭىز ۋە پۈتكۈل دۇنيادىكى قىينالغان قېرىنداشلارغا كۆپ دۇئا قىلىڭ.</p>
+                </div>
+            </div>
+
+            <!-- 3-ئەسلەتمە -->
+            <div class="reminder-item">
+                <div class="reminder-icon">🤝</div>
+                <div class="reminder-text">
+                    <h3>سەدىقە ۋە ئېھسان</h3>
+                    <p>پەيغەمبىرىمىز (س.ئە.ۋ) رامزاندا كىشىلەرنىڭ ئەڭ سېخىيسى ئىدى. قۇربىڭىزنىڭ يېتىشىچە يوقسۇل ۋە ئېھتىياجلىق كىشىلەرگە ياردەم بېرىڭ.</p>
+                </div>
+            </div>
+
+            <!-- 4-ئەسلەتمە -->
+            <div class="reminder-item">
+                <div class="reminder-icon">🤍</div>
+                <div class="reminder-text">
+                    <h3>تىل ۋە ئەخلاقنى قوغداش</h3>
+                    <p>روزا پەقەت يەپ-ئىچمەسلىكلا ئەمەس، بەلكى يالغان سۆز، غەيۋەت ۋە يامان قىلىقلاردىن تىلنى ھەم دىلنى پاك تۇتۇشتۇر.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ھەدىس ياكى نەسىھەت كارتىسى -->
+        <div class="hadith-quote">
+            <p>«كىمكى رامىزان روزىسىنى ئىمان بىلەن، ساۋابىنى ئاللاھتىن ئۈمىد قىلغان ھالدا تۇتسا، ئۇنىڭ ئىلگىرىكى گۇناھلىرى مەغپىرەت قىلىنىدۇ.»</p>
+            <small style="color: #666; margin-top: 5px; display: block;">— (بۇخارى ۋە مۇسلىم رىۋايىتى)</small>
+        </div>
+
+        <!-- ھەمبەھىرلەش تۈگمىسى -->
+        <div style="text-align: center;">
+            <button class="btn-share" onclick="window.print()">🖨️ بەتنى ساقلاش ياكى چىقىرىش</button>
+        </div>
+    </div>
+
+    <!-- ئاياغ قىسمى -->
+    <footer class="footer">
+        <p>تۇتقان روزاڭلار قوبۇل، نىيەتلىرىڭلار ئىجابەت بولسۇن! 🌸</p>
+    </footer>
+</div>
+</body>
+</html>
